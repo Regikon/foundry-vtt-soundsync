@@ -14,6 +14,7 @@
 		"verified": "13"
 	},
 	"url": "https://github.com/Regikon/foundry-vtt-soundsync",
+	"download": "https://github.com/Regikon/foundry-vtt-soundsync/releases/download/release-1.0.0/foundry-vtt-soundsync-release-1.0.0.zip",
 	"esmodules": [
 		"scripts/soundsync.mjs"
 	]
