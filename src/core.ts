@@ -2,6 +2,7 @@ import { formatLog } from "./utils";
 
 const resyncPlaylist = async (playlist: Playlist) => {
     const playingSounds = playlist.sounds.filter((sound) => sound.playing);
+    const oldPauseTimes = playingSounds.map((sound) => sound.pausedTime);
     const soundsStopMessages = playingSounds.map((sound) => {
         return {
             "playing": false,
@@ -12,6 +13,12 @@ const resyncPlaylist = async (playlist: Playlist) => {
     const soundsStartMessages = playingSounds.map((sound) => {
         return {
             "playing": true,
+            "_id": sound.id,
+        }
+    });
+    const soundsResetPauses = playingSounds.map((sound, idx) => {
+        return {
+            "pausedTime": oldPauseTimes[idx],
             "_id": sound.id,
         }
     });
@@ -33,6 +40,14 @@ const resyncPlaylist = async (playlist: Playlist) => {
     });
     if (!startResult) {
         console.error(formatLog("Failed to start paused playlists."));
+    }
+
+    const pauseRestoreResult = await playlist.update({
+        "sounds": soundsResetPauses,
+        "_id": playlist.id,
+    });
+    if (!pauseRestoreResult) {
+        console.error(formatLog("Failed to restore the original paused time of playlist"));
     }
 }
 
