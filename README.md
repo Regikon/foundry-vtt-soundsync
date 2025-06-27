@@ -8,7 +8,7 @@ their foundry client starts all tracks set by the GM
 from the beginning, so the music between the GM and
 other players can be desynchronized.
 
-You can add it to your VTT with [a link to module.json](https://raw.githubusercontent.com/Regikon/foundry-vtt-soundsync/master/module.json)
+You can add it to your VTT with [a link to module.json](https://raw.githubusercontent.com/Regikon/foundry-vtt-soundsync/refs/heads/master/public/module.json)
 
 ## How to use
 
