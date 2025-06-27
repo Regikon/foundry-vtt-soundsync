@@ -1,7 +1,7 @@
 {
 	"id": "foundry-vtt-soundsync",
 	"title": "Playlist Sound Sync",
-	"description": "A module which synchronizes music playback whenever new user connects",
+	"description": "A module which synchronizes music playback",
 	"authors": [
 		{
 			"name": "Ilya Andriyanov",
