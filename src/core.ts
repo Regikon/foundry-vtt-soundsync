@@ -37,7 +37,7 @@ const resyncPlaylist = async (playlist: Playlist) => {
 }
 
 export const resyncPlayedMusic = async () => {
-    console.debug("Resynchronizing the playlists");
+    console.debug(formatLog("Resynchronizing the playlists"));
     const playingPlaylists = game.playlists?.playing;
     if (!playingPlaylists) {
         return;

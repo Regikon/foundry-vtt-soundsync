@@ -24,7 +24,6 @@ export const applyHooks = () => {
 
         // V12 Backwards compatible hook
         Hooks.on("renderPlaylistDirectory", (_application, html, _data) => {
-            console.log(html);
             insertControlPanel(html);
         });
     });
