@@ -17,6 +17,6 @@
 	"download": "https://github.com/Regikon/foundry-vtt-soundsync/releases/download/release-1.0.0/foundry-vtt-soundsync-release-v1.0.0.zip",
 	"manifest": "https://raw.githubusercontent.com/Regikon/foundry-vtt-soundsync/master/module.json",
 	"esmodules": [
-		"scripts/soundsync.mjs"
+		"soundsync.js"
 	]
 }
