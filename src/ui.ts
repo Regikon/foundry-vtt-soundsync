@@ -16,8 +16,12 @@ const renderControlPanel = async () => {
     return controlPanel;
 }
 
-export const insertControlPanel = async (playlistHtml: HTMLElement) => {
-    const playlistTabHeader = playlistHtml.querySelector('.directory-header');
+export const insertControlPanel = async (playlistHtml: HTMLElement | JQuery) => {
+    // jQuery protection (to be compatible with foundry v12)
+    if (!(playlistHtml instanceof HTMLElement)) {
+        playlistHtml = (playlistHtml as JQuery)[0];
+    }
+    const playlistTabHeader = (playlistHtml as HTMLElement).querySelector('.directory-header');
     if (!playlistTabHeader) {
         console.error(formatLog("Failed to find playlists tab header"));
         return;
